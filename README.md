@@ -15,13 +15,17 @@ Keep your files safe by locking them with XOR encryption</br></br>
 ```shell
 $ git clone https://github.com/Mini-Ware/File-Locker
 ```
-2) To lock a file, run the following command
+2) To lock a file, run the following commands
 ```shell
 $ cd File-Locker
 $ chmod +x run.sh
 $ ./run.sh <file name>
 ```
-3) To unlock that file, run the following command
+3) To unlock that file, run the following commands
 ```shell
 $ ./run.sh <file name>
 ```
+# Found this helpful?
+- Star this repository
+- Submit issues
+- Contribute with pull requests
