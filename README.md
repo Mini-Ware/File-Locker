@@ -1,5 +1,5 @@
 # File-Locker
-Keep your files safe by locking them with XOR encryption</br></br>
+Keep your files obfuscated by locking them with XOR encryption</br></br>
 ![License](https://img.shields.io/github/license/Mini-Ware/File-Locker)
 ![Stars](https://img.shields.io/github/stars/Mini-Ware/File-Locker)
 ![Forks](https://img.shields.io/github/forks/Mini-Ware/File-Locker)<br>
@@ -25,6 +25,10 @@ $ ./run.sh <file name>
 ```shell
 $ ./run.sh <file name>
 ```
+# How secure is this?
+- Methods such as factoring can use used to break XOR encryption
+- XOR encryption is NOT the most secure way of encrypting data
+- You can read more about it on [Wikipedia](https://en.m.wikibooks.org/wiki/Cryptography/Breaking_Vigen%C3%A8re_cipher)
 # Anything else?
 - Star this repository if you found it interesting/helpful
 - Submit issues for new features/report bugs
