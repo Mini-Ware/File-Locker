@@ -25,7 +25,7 @@ $ ./run.sh <file name>
 ```shell
 $ ./run.sh <file name>
 ```
-# Found this helpful?
+# Want to contibute?
 - Star this repository
 - Submit issues
-- Contribute with pull requests
+- Make pull requests
