@@ -26,6 +26,6 @@ $ ./run.sh <file name>
 $ ./run.sh <file name>
 ```
 # Anything else?
-- Star this repository if you found it interesting
+- Star this repository if you found it interesting/helpful
 - Submit issues for new features/report bugs
-- Make pull requests to contribute
+- Contribute by making pull requests
