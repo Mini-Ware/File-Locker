@@ -101,26 +101,33 @@ tput setaf 255
 sleep 1
 
 #Main code
+declare -a dir
 declare -a file
-#sort arguments for files, directories to be added soon
+#sort arguments for files and directories
 while [ ! -z $1 ]
 do
-	if [ -f $1 ]
+	if [ -d $1 ]
+	then	
+		dir+=($1)
+		shift
+		continue
+	elif [ -f $1 ]
 	then
 		file+=($1)
 		shift 
 		continue
 	fi
-	echo "ERROR: $1 is not a file, skipping..."
+	echo "ERROR: $1 is not a file OR directory, skipping..."
 	shift
 done
-#check for files, directories to be added soon
-if [-z $file ]
+#check for files and directories
+if [[ -z $dir && -z $file ]]
 then
-	echo "ERROR: no file found!"
+	echo "ERROR: no file AND directory found!"
 	exit 1
 fi
 tput setaf 130
+echo "total directories to be XOR'd: ${#dir[@]}"
 echo "total files to be XOR'd: ${#file[@]}"
 tput setaf 255
 
@@ -143,6 +150,27 @@ then
 	tput setaf 055
 	echo "files XOR'd!"
 	tput setaf 255
+fi
+
+e=0
+
+if [ ! -z $dir ]
+then
+	echo "XOR'ng directories... this may take a while"
+	while [ $e -lt ${#dir[@]} ]
+	do
+		for f in ${dir[$e]}*
+		do
+			if test -f "$f"
+			then
+				location=$f
+				content=$(xxd -p $f)
+				xor "$content"
+			fi
+		done
+		e=$[$e+1]
+	done
+	echo "directories XOR'd!"
 fi
 
 echo "all files XOR'd, have a nice day!"
