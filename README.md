@@ -10,7 +10,7 @@ Keep your files obfuscated by locking them with XOR encryption</br></br>
 - XOR Encryption algorithm is an easy to implement method of symmetric encryption
 - You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/XOR_cipher)
 # How to use?
-![](https://github.com/Mini-Ware/File-Locker/blob/main/preview.png)
+![](https://github.com/Mini-Ware/File-Locker/blob/main/example.png)
 1) Clone this repository
 ```shell
 $ git clone https://github.com/Mini-Ware/File-Locker
