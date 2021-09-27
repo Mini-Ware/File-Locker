@@ -19,7 +19,7 @@ xor () {
   i=2
   n=2
   current=""
-  rm -rf $location
+  rm -f $location
 
   while [ $i -le ${#filter} ]
   do
