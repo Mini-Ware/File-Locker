@@ -72,7 +72,7 @@ banner () {
   tput setaf 055
   printf "  __ _ _        _            _\n / _(_) | ___  | | ___   ___| | _____ _ __\n| |_| | |/ _ \ | |/ _ \ / __| |/ / _ \ '__|\n|  _| | |  __/ | | (_) | (__|   <  __/ |\n|_| |_|_|\___| |_|\___/ \___|_|\_\___|_|\n\n"
   tput setaf 1
-  echo "WARNING!: if you exit the program while it's running, your files may be deleted!"
+  echo "WARNING!: If you exit the program while it's running, your files may be deleted!"
   tput setaf 255
 }
 
@@ -127,8 +127,8 @@ then
 	exit 1
 fi
 tput setaf 130
-echo "total directories to be XOR'd: ${#dir[@]}"
-echo "total files to be XOR'd: ${#file[@]}"
+echo "Total directories found: ${#dir[@]}"
+echo "Total files found: ${#file[@]}"
 tput setaf 255
 
 prompt
@@ -138,7 +138,7 @@ e=0
 if [ ! -z $file ]
 then
 	tput setaf 055
-	echo "XOR'ng files... this may take a while"
+	echo "Processing files... this may take a while"
 	tput setaf 255
 	while [ $e -lt ${#file[@]} ]
 	do
@@ -147,16 +147,13 @@ then
 		xor "$content"
 		e=$[$e+1]
 	done
-	tput setaf 055
-	echo "files XOR'd!"
-	tput setaf 255
 fi
 
 e=0
 
 if [ ! -z $dir ]
 then
-	echo "XOR'ng directories... this may take a while"
+	echo "Processing directories... this may take a while"
 	while [ $e -lt ${#dir[@]} ]
 	do
 		for f in ${dir[$e]}*
@@ -170,7 +167,8 @@ then
 		done
 		e=$[$e+1]
 	done
-	echo "directories XOR'd!"
 fi
 
-echo "all files XOR'd, have a nice day!"
+tput setaf 002
+echo "All files are encrypted, have a nice day!"
+tput setaf 255
