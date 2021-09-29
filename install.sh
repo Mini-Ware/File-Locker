@@ -47,4 +47,3 @@ then
 	fi
 fi
 install $name
-install
