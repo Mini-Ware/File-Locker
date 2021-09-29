@@ -2,29 +2,29 @@
 blue=$'\e[0;34m'
 green=$'\e[0;32m'
 white=$'\e[0m'
-echo "NOTE: if this script does not seem to install, please check if the alias is already used by bash"
+echo "NOTE: If this script does not seem to install, please check if the alias is already used by bash"
 function install() { 
-	echo "$blue[*]$white installing..."
+	echo "$blue[*]$white Installing..."
 	sleep 0.5
 	sudo cp run.sh /bin/$1
 	check
 	sudo chmod +x /bin/$1
 	check
-	echo $green"[*]"$white" installation complete!"
+	echo $green"[*]"$white" Installation complete!"
 	exit 0;
 }
 function check() {
 	if [ ! $? -eq 0 ];
 	then
-		echo "something went wrong... quitting!"
+		echo "Something went wrong... Quitting!"
 		exit $?
 	fi
 }
-default="XOR-bash"
-echo "what is the command you want to use to call the script?"
-echo "leave blank to use the default installation name"
+default="fl"
+echo "What is the custom command name you want to use to call the script?"
+echo "(Leave blank to use the default installation name)"
 echo "["$blue"Default:$green XOR-bash"$white"]"
-read -p "$blue command$green>$white" name
+read -p "$blue Command$green>$white" name
 if [ -z $name ]
 then
 	echo "No input, using $default!"
@@ -32,17 +32,17 @@ then
 fi
 if [ -f /bin/$name ]
 then
-	echo "ERROR! command $name already exists! do you want to continue?"
+	echo "ERROR! Command $name already exists! Do you want to continue?"
 	read -p $blue"Y$green/n$white>" cont
 	if [ -z $cont ]
 	then
-		echo "No input detected! quitting!"
+		echo "No input detected! Quitting!"
 		exit 1
 	fi
 	shopt -s nocasematch
 	if [[ $cont == "n" ]]
 	then
-		echo "quitting installation!"
+		echo "Quitting installation!"
 		exit 1
 	fi
 fi
