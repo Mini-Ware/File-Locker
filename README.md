@@ -25,7 +25,7 @@ $ ./run.sh <file name>
 ```shell
 $ ./run.sh <file name>
 ```
-# How secure is this?
+# Disclaimer
 - Methods such as factoring could possibly break XOR encryption
 - XOR encryption is NOT the most secure way of encrypting data
 - You can read more about it on [Wikipedia](https://en.m.wikibooks.org/wiki/Cryptography/Breaking_Vigen%C3%A8re_cipher)
